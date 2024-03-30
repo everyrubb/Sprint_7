@@ -18,8 +18,8 @@ class TestGetOrderByTrack:
         assert response_get_id_order.status_code == 400
         assert MessageText.GET_ORDER_WITHOUT_TRACK in response_get_id_order.text
 
-    @allure.title('Проверка получения заказа без номера')
-    def test_get_order_by_track(self):
+    @allure.title('Проверка получения заказа с несуществующим номером')
+    def test_get_order_by_fake_track(self):
         response_get_id_order = requests.get(f'{Const.GET_ORDER_TRACK}?t=02930202')
         assert response_get_id_order.status_code == 404
         assert MessageText.GET_ORDER_FAKE_TRACK in response_get_id_order.text
