@@ -14,6 +14,7 @@ class TestLoginCourier:
         })
         assert response.status_code == 200
         assert MessageText.LOGING_COURIER in response.text
+        helpers.delete_courier(data[0], data[1])
 
     @allure.title('Проверка авторизации курьера без логина')
     def test_login_courier_without_login(self, helpers):

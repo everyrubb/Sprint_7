@@ -3,6 +3,9 @@ import requests
 import random
 import string
 
+from const import Const
+
+
 class Helpers:
 
     # метод генерирует строку, состоящую только из букв нижнего регистра, в качестве параметра передаём длину строки
@@ -41,3 +44,12 @@ class Helpers:
             login_pass.append(first_name)
 
         return login_pass
+
+    @allure.step('Удаляем курьера')
+    def delete_courier(self, login, password):
+        response_post = requests.post(Const.LOGIN_COURIER, data={
+            "login": login,
+            "password": password,
+        })
+        courier_id = response_post.json()['id']
+        requests.delete(f'{Const.DELETE_COURIER}/{courier_id}')

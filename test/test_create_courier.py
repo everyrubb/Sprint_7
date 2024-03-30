@@ -16,6 +16,7 @@ class TestCreateCourier:
         response = requests.post(Const.CREATE_COURIER, data=payload)
         assert response.status_code == 201
         assert MessageText.CREATE_COURIER in response.text
+        helpers.delete_courier(login, password)
 
     @allure.title('Проверка невозможности создания двух одинаковых курьеров')
     def test_create_courier_twice(self, helpers):
@@ -61,3 +62,4 @@ class TestCreateCourier:
         response = requests.post(Const.CREATE_COURIER, data=payload)
         assert response.status_code == 201
         assert MessageText.CREATE_COURIER in response.text
+        helpers.delete_courier(login, password)
