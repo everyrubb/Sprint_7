@@ -17,7 +17,6 @@ class TestTakeOrder:
     def test_take_order_without_id_order(self, create_courier):
         id_courier = create_courier
         response_take_order = requests.put(f'{Const.TAKE_ORDER}?courierId={id_courier}')
-        print(response_take_order.text)
         # Баг на бэке. Присылается 'code:404,message:Not Found'
         assert response_take_order.status_code == 400
         assert MessageText.TAKE_ORDER_WITHOUT_ID_COURIER_ORDER in response_take_order.text
