@@ -1,13 +1,13 @@
 
 class Const:
-
-    CREATE_COURIER = 'http://qa-scooter.praktikum-services.ru/api/v1/courier'
-    LOGIN_COURIER = 'http://qa-scooter.praktikum-services.ru/api/v1/courier/login'
-    CREATE_ORDER = 'http://qa-scooter.praktikum-services.ru/api/v1/orders'
-    ORDER_LIST = 'http://qa-scooter.praktikum-services.ru/api/v1/orders'
-    DELETE_COURIER = 'http://qa-scooter.praktikum-services.ru/api/v1/courier/'
-    GET_ORDER_TRACK = 'http://qa-scooter.praktikum-services.ru/api/v1/orders/track'
-    TAKE_ORDER = 'https://qa-scooter.praktikum-services.ru/api/v1/orders/accept/'
+    MAIN_URL = 'http://qa-scooter.praktikum-services.ru'
+    CREATE_COURIER = f'{MAIN_URL}/api/v1/courier'
+    LOGIN_COURIER = f'{MAIN_URL}/api/v1/courier/login'
+    CREATE_ORDER = f'{MAIN_URL}/api/v1/orders'
+    ORDER_LIST = f'{MAIN_URL}/api/v1/orders'
+    DELETE_COURIER = f'{MAIN_URL}/api/v1/courier/'
+    GET_ORDER_TRACK = f'{MAIN_URL}/api/v1/orders/track'
+    TAKE_ORDER = f'{MAIN_URL}/api/v1/orders/accept/'
 
 class MessageText:
 
